@@ -26,7 +26,7 @@ export default class App extends Component {
                             </a>
                         </li>
                         <li className="link">
-                            <a href="../images/resume.pdf" target="blank">
+                            <a href="src/images/resume.pdf" target="blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
                                     <path d="M15 2v5h5v15h-16v-20h11zm1-2h-14v24h20v-18l-6-6z"/>
                                 </svg>
