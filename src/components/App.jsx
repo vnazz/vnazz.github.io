@@ -8,7 +8,7 @@ export default class App extends Component {
                     <h3 id="name">Victoria Nazari</h3>
                     <div className="divider"></div>
                     <p className="info">
-                        Senior CS major at Rice. Californian, basketball fan, and traveler.
+                        Software Engineer at WePay
                     </p>
                     <ul className="links">
                         <li className="link">
