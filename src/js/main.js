@@ -48,7 +48,7 @@ class App
     this.displacementVal = randomNum(0.3, 0.8);
     this.material = new THREE.ShaderMaterial({
       vertexShader: vertex,
-      fragmentShader: fragment,
+      // fragmentShader: fragment, causes issues on mac
       uniforms: {
         uTime: { value: 0 },
 
