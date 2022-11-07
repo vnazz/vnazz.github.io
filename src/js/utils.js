@@ -1,5 +1,3 @@
-import { Vector3, BufferAttribute } from 'three';
-
 const newTypedArray = (type, count) => {
   switch(type) {
     case 'Uint16':
@@ -39,7 +37,7 @@ const toTypedArray = (array, type, numComponents) => {
 
 const newBufferAttribute = (array, type, numComponents) => {
   const typedArray = toTypedArray(array, type, numComponents);
-  return new BufferAttribute(typedArray, numComponents);
+  return new THREE.BufferAttribute(typedArray, numComponents);
 }
 
 export const toIndexedVertices = geometry => {
@@ -55,7 +53,7 @@ export const toIndexedVertices = geometry => {
     const key = `${x}${y}${z}`;
     const index = indicesById.get(key);
     if (index === undefined) {
-      uniquePositions.push(new Vector3(x, y, z));
+      uniquePositions.push(new THREE.Vector3(x, y, z));
       indicesById.set(key, j);
       indices.push(j);
       j++;

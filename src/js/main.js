@@ -1,16 +1,4 @@
 import
-{
-  WebGLRenderer, 
-  Scene,
-  PerspectiveCamera,
-  IcosahedronGeometry,
-  ShaderMaterial,
-  Mesh,
-  Raycaster,
-  Vector2
-} from 'three';
-
-import
 { 
   toIndexedVertices,
   randomNum 
@@ -30,14 +18,14 @@ class App
   constructor()
   {
     this.canvas = document.querySelector('#c');
-    this.renderer = new WebGLRenderer({canvas: this.canvas, antialias : true, alpha : true});
-    this.scene = new Scene();
-    this.raycaster = new Raycaster();
-    this.mouse = new Vector2();
+    this.renderer = new THREE.WebGLRenderer({canvas: this.canvas, antialias : true, alpha : true});
+    this.scene = new THREE.Scene();
+    this.raycaster = new THREE.Raycaster();
+    this.mouse = new THREE.Vector2();
     this.width = this.canvas.offsetWidth;
     this.height = this.canvas.offsetHeight;
 
-    this.camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     // camera is slightly left of blob
     // less = left, less = up, less = zoom in
     this.camera.position.set(-0.25, 0, 3.2);
@@ -55,10 +43,10 @@ class App
 
   addBlob()
   {
-    const geometry = new IcosahedronGeometry(1.75, 40);
+    const geometry = new THREE.IcosahedronGeometry(1.75, 40);
     toIndexedVertices(geometry);
     this.displacementVal = randomNum(0.3, 0.8);
-    this.material = new ShaderMaterial({
+    this.material = new THREE.ShaderMaterial({
       vertexShader: vertex,
       fragmentShader: fragment,
       uniforms: {
@@ -75,7 +63,7 @@ class App
       }
     });
   
-    this.object = new Mesh(geometry, this.material);
+    this.object = new THREE.Mesh(geometry, this.material);
     this.scene.add(this.object);
   }
 
