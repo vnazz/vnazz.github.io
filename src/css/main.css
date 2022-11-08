@@ -7,7 +7,7 @@ html, body {
   height: 100%;
   display: block;
   position: fixed;
-  background-image: linear-gradient(to bottom right, #361B80, #000A1C);
+  background-image: linear-gradient(to bottom right, #000000, #000000);
 }
 #text_holder {
   width: 40%;
@@ -16,7 +16,7 @@ html, body {
 #welcome
 {
   position: relative;
-  color: #DE94F7;
+  color: #FFF712;
   font-size: 3vw;
   font-family: 'Poppins', sans-serif;
 }
